@@ -331,6 +331,10 @@ body.one-content-column-version .content thead {
     color: #417179;
 }
 
+body.one-content-column-version .content code {
+    background-color: gray;
+}
+
 /* RESPONSIVE
 ----------------------------------------------------------------------------------------*/
 

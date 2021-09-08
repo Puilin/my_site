@@ -31,18 +31,18 @@
  <body class="one-content-column-version">
  <div class="left-menu">
      <div class="content-logo">
-         <span>퓨이린 봇 명령어</span>
+         <span><a href=".."><style type="text/css">a{ text-decoration:none }</style>퓨이린 봇</a> 명령어</span>
      </div>
      <div class="content-menu">
          <ul>
-             <li class="scroll-to-link active" data-target="get-started">
-                 <a>GET STARTED</a>
+             <li class="scroll-to-link active" data-target="basics">
+                 <a>기본기능</a>
              </li>
-             <li class="scroll-to-link" data-target="get-characters">
-                 <a>Get Characters</a>
+             <li class="scroll-to-link" data-target="convenience">
+                 <a>편의기능</a>
              </li>
              <li class="scroll-to-link" data-target="errors">
-                 <a>Errors</a>
+                 <a>미니게임</a>
              </li>
          </ul>
      </div>
@@ -52,20 +52,137 @@
  <div class="content-page">
      <div class="content">
          <div class="overflow-hidden content-section" id="content-get-started">
-             <h1 id="get-started">Get started</h1>
+             <h1 id="basics">기본기능</h1>
              <p>
-                 The Westeros API provides programmatic access to read Game of Thrones data. Retrieve a character, provide an oauth connexion, retrieve a familly, filter them, etc.
+                 <code>/명령어</code>
+                 <br><ul class="circle">
+                     <li style="color: white;">명령어 목록을 봅니다. <code>/도움말</code> 로도 호출가능합니다.</li>
+                 </ul>
              </p>
              <p>
-                 To use this API, you need an <strong>API key</strong>. Please contact us at <a href="mailto:jon.snow@nightswatch.wes">jon.snow@nightswatch.wes</a> to get your own API key.
-             </p>
+                <code>/패치노트</code>
+                <br><ul class="circle">
+                    <li style="color: white;">패치노트를 열람할 수 있습니다.</li>
+                </ul>
+            </p>
+            <p>
+                <code>/안녕</code>
+                <br><ul class="circle">
+                    <li style="color: white;">퓨이린 봇이 인사를 합니다.</li>
+                </ul>
+            </p>
+            <p>
+                <code>/청소 (메시지 개수)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">메시지를 입력한 개수만큼 삭제합니다.</li>
+                        <ul class="disc" style="margin-left: -20px;">
+                            <li style="color: white;">
+                                변수 (정수) 하나를 필요로 하는 명령어입니다.<br>
+                                <ul class="square" style="margin-left: -20px;">
+                                    <li style="color:white">
+                                        ex) <code>/청소 5</code>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="color: white;"><strong>필요권한</strong><br>
+                                채널관리 권한이 필요합니다.
+                            </li>
+                            <li style="color: white;"><strong>주의</strong><br>
+                                너무 큰 숫자를 입력할 경우 봇의 성능이 급격하게 저하됩니다.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <code>/출첵</code>
+                <br><ul class="circle">
+                    <li style="color: white;">출석체크 현황을 확인합니다. <code>/출석체크</code> 로도 호출할 수 있습니다.</li>
+                </ul>
+            </p>
+            <p>
+                <code>/나무</code>
+                <br><ul class="circle">
+                    <li style="color: white;">봇이 나무를 캐줍니다. <del>잡기능</del></li>
+                </ul>
+            </p>
+            <p>
+                <code>/설정</code>
+                <br><ul class="circle">
+                    <li style="color: white;">서버 별로 설정 가능한 퓨이린 봇의 설정을 관리할 수 있습니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            <strong>참고</strong><br>
+                            v.10.4 기준 현재 음성 채팅 참여 알림 설정이 가능합니다.
+                        </li>
+                    </ul>
+                </ul>
+            </p>
          </div>
          <div class="overflow-hidden content-section" id="content-get-characters">
-             <h2 id="get-characters">get characters</h2>
+             <h2 id="convenience">편의기능</h2>
              <p>
-                 To get characters you need to make a POST call to the following url :<br>
-                 <code class="higlighted">http://api.westeros.com/character/get</code>
-             </p>
+                <code>/뽑기 (숫자1) (숫자2)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">입력한 두 정수 사이의 수를 임의로 추출합니다. 이 때 추출되는 수는 양끝값을 포함합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            변수(정수) 두 개를 필요로하는 명령어입니다.<br>
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/뽑기 1 10</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/골라</code>
+                <br><ul class="circle">
+                    <li style="color: white;">추첨 시스템을 불러옵니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            예시<br>
+                            <img src="https://blogfiles.pstatic.net/MjAyMTAyMDZfMTQ4/MDAxNjEyNjA3Mzg1MDI1.EbQrg5T-_qMVgNc7RTMI1BwWG_KY1qr6Gd34ThzWCvIg.MKfuohmmu6pBIsfiFRSTLyyh7DyPc0cnafpf1nyiygog.PNG.suryblue/%EC%BA%A1%EC%B2%984.PNG?type=w1">
+                            <img src="https://blogfiles.pstatic.net/MjAyMTAyMDZfNzYg/MDAxNjEyNjA3Mzg1MjM3.FN3ppBcj0M-Bi6gXMCmSvrBcquVuCq37dHzeH5hR5BMg.QsFI5j97tVsER8Laru67ZRgs-FBBleh8WcKLkDBY7Gwg.PNG.suryblue/%EC%BA%A1%EC%B2%985.PNG?type=w1">
+                            <img src="https://blogfiles.pstatic.net/MjAyMTAyMDZfMiAg/MDAxNjEyNjA3Mzg1NDUy.ODQRi4HedX2bWZcHfzTHgihMDJcpQdBqDrjXUFqG24kg.Tp2aQxMEXICyrMy7ngh5diSMWKi9znK6F3B7jdPengwg.PNG.suryblue/%EC%BA%A1%EC%B2%986.PNG?type=w1">
+                        </li>
+                        <li style="color: white;">파생기능 <code>/골라` 목록1 목록2 ...</code>
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    하나의 목록만 추출할 때 사용할 수 있습니다.
+                                </li>
+                                <li style="color: white;">
+                                    ex) <code>/골라` 코카콜라 펩시</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/코로나</code>
+                <br><ul class="circle">
+                    <li style="color: white;">봇이 코로나 관련 정보를 제공합니다.</li>
+                </ul>
+            </p>
+            <p>
+                <code>/날씨 (지역)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">봇이 입력된 지역의 날씨 정보를 제공합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            변수(문자열) 하나를 필요로하는 명령어입니다.<br>
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/날씨 서울 서초구</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </p>
              <br>
              <h4>QUERY PARAMETERS</h4>
              <table>
