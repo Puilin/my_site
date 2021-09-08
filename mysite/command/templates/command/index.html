@@ -41,9 +41,18 @@
              <li class="scroll-to-link" data-target="convenience">
                  <a>편의기능</a>
              </li>
-             <li class="scroll-to-link" data-target="errors">
+             <li class="scroll-to-link" data-target="minigame">
                  <a>미니게임</a>
              </li>
+             <li class="scroll-to-link" data-target="game_util">
+                <a>게임 관련 기능</a>
+            </li>
+            <li class="scroll-to-link" data-target="inchant">
+                <a>강화(인챈트) 기능</a>
+            </li>
+            <li class="scroll-to-link" data-target="music">
+                <a>음악 기능</a>
+            </li>
          </ul>
      </div>
  </div>
@@ -202,101 +211,204 @@
                     </ul>
                 </ul>
             </p>
-             <br>
-             <h4>QUERY PARAMETERS</h4>
-             <table>
-                 <thead>
-                 <tr>
-                     <th>Field</th>
-                     <th>Type</th>
-                     <th>Description</th>
-                 </tr>
-                 </thead>
-                 <tbody>
-                 <tr>
-                     <td>secret_key</td>
-                     <td>String</td>
-                     <td>Your API key.</td>
-                 </tr>
-                 <tr>
-                     <td>search</td>
-                     <td>String</td>
-                     <td>(optional) A search word to find character by name.</td>
-                 </tr>
-                 <tr>
-                     <td>house</td>
-                     <td>String</td>
-                     <td>
-                         (optional) a string array of houses:
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>alive</td>
-                     <td>Boolean</td>
-                     <td>
-                         (optional) a boolean to filter alived characters
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>gender</td>
-                     <td>String</td>
-                     <td>
-                         (optional) a string to filter character by gender:<br> m: male<br> f: female
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>offset</td>
-                     <td>Integer</td>
-                     <td>(optional - default: 0) A cursor for use in pagination. Pagination starts offset the specified offset.</td>
-                 </tr>
-                 <tr>
-                     <td>limit</td>
-                     <td>Integer</td>
-                     <td>(optional - default: 10) A limit on the number of objects to be returned, between 1 and 100.</td>
-                 </tr>
-                 </tbody>
-             </table>
          </div>
          <div class="overflow-hidden content-section" id="content-errors">
-             <h2 id="errors">Errors</h2>
+             <h2 id="minigame">미니게임</h2>
              <p>
-                 The Westeros API uses the following error codes:
-             </p>
-             <table>
-                 <thead>
-                 <tr>
-                     <th>Error Code</th>
-                     <th>Meaning</th>
-                 </tr>
-                 </thead>
-                 <tbody>
-                 <tr>
-                     <td>X000</td>
-                     <td>
-                         Some parameters are missing. This error appears when you don't pass every mandatory parameters.
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>X001</td>
-                     <td>
-                         Unknown or unvalid <code class="higlighted">secret_key</code>. This error appears if you use an unknow API key or if your API key expired.
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>X002</td>
-                     <td>
-                         Unvalid <code class="higlighted">secret_key</code> for this domain. This error appears if you use an API key non specified for your domain. Developper or Universal API keys doesn't have domain checker.
-                     </td>
-                 </tr>
-                 <tr>
-                     <td>X003</td>
-                     <td>
-                         Unknown or unvalid user <code class="higlighted">token</code>. This error appears if you use an unknow user <code class="higlighted">token</code> or if the user <code class="higlighted">token</code> expired.
-                     </td>
-                 </tr>
-                 </tbody>
-             </table>
+                <code>/랜덤게임</code>
+                <br><ul class="circle">
+                    <li style="color: white;">랜덤게임을 시작합니다. 봇이 제공 게임 중 하나를 무작위로 불러옵니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            현재 제공 게임 : 끝말잇기, 업다운, 블랙잭, 가위바위보<br>
+                        </li>
+                        <li style="color: white;">
+                            각 게임은 명령어를 통해 따로 불러올 수 있습니다.
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/끝말잇기</code> <code>/업다운</code> <code>/블랙잭</code> <code>/가위바위보</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/배라</code>
+                <br><ul class="circle">
+                    <li style="color: white;">배스킨라빈스 31 게임을 시작합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            <strong>필요권한</strong><br>
+                            역할관리와 채널관리 권한이 필요합니다.
+                        </li>
+                    </ul>
+                </ul>
+            </p>
          </div>
+         <div class="overflow-hidden content-section" id="content-get-gameutil">
+            <h2 id="game_util">게임 관련 기능</h2>
+            <p>
+                <code>/롤전적 (소환사명)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">봇이 입력된 소환사의 전적 관련 정보를 제공합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            변수(문자열) 하나를 필요로 하는 명령어입니다.
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/롤전적 퓨이린</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/롤승률 (소환사1, 소환사2, ... , 소환사5)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">봇이 입력된 소환사 5명의 승률을 분석해 예상 승률을 제공합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            예시<br>
+                            <img src="https://blogfiles.pstatic.net/MjAyMTA3MzFfMTgy/MDAxNjI3NzEzNjUwODkz.6sjl0QqVJfhg4aYdhpI-f0afOMoSD1q6LAeznA1SSFkg.moxWNiNaUpE4RwnY0vjIGxhSx3UN9Uixjt0dw4uxcKwg.PNG.suryblue/1.PNG?type=w1" alt="">
+                            <img src="https://blogfiles.pstatic.net/MjAyMTA3MzFfMjQg/MDAxNjI3NzEzNjUxMjgx.4pj7ju1BXdzFCJzDPsu-Y3UiqvZnJQncpsTMu0TZs0Mg.4-vx5FM8z_2z993f1hQ7tkNDf81B8R29nBni6sOUTiAg.PNG.suryblue/2.PNG?type=w1" alt="">
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/메이플</code>
+                <br><ul class="circle">
+                    <li style="color: white;">메이플 편의기능을 불러옵니다.</li>
+                </ul>
+            </p>
+         </div>
+         <div class="overflow-hidden content-section" id="content-get-inchant">
+            <h2 id="inchant">강화(인챈트) 기능</h2>
+            <p>
+                <code>/강화 (멤버명)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">입력된 멤버를 인챈트합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            변수(문자열) 하나를 필요로 하는 명령어입니다.
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/강화 퓨이린</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/강화 (멤버명)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">입력된 멤버를 인챈트합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            변수(문자열) 하나를 필요로 하는 명령어입니다.
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/강화 퓨이린</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li style="color: white;">
+                            <strong>참고</strong><br>
+                            서버 내에서 변경된 닉네임은 봇이 인식하지 못합니다. 이 경우 <code>/강화랭킹</code> 을 통해 조회되는 닉네임을 볼 수 있습니다.
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/강화현황 (멤버명)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">입력된 멤버의 인챈트 단계를 조회합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            변수(문자열) 하나를 필요로 하는 명령어입니다.
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/강화현황 퓨이린</code>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/강화랭킹</code>
+                <br><ul class="circle">
+                    <li style="color: white;">서버 내의 인챈트 랭킹을 조회합니다.</li>
+                </ul>
+            </p>
+         </div>
+         <div class="overflow-hidden content-section" id="content-get-music">
+            <h2 id="music">음악 기능</h2>
+            <p>
+                <code>/커몬</code>
+                <br><ul class="circle">
+                    <li style="color: white;">봇이 음성채팅방에 참여합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            알림<br>
+                            해당 명령어를 사용한 멤버가 음성채팅방에 들어와 있어야 합니다.
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/바이</code>
+                <br><ul class="circle">
+                    <li style="color: white;">봇이 음성채팅방에서 나갑니다.</li>
+                </ul>
+            </p>
+            <p>
+                <code>/재생 (유튜브 링크)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">입력된 링크의 음악을 재생합니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            변수(유튜브 링크) 하나를 필요로 하는 명령어입니다.
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/재생 https://www.youtube.com/watch?v=gdZLi9oWNZg</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li style="color: white;">
+                            <strong>주의</strong><br>
+                            음악이 재생되는데 다소 시간이 소요됩니다. (10초 내외) 재생 명령어를 중복 사용하지 않도록 신경 써주시기 바랍니다. (request limit 관련)
+                        </li>
+                        <li style="color: white;">
+                            <strong>참고</strong><br>
+                            재생목록은 재생할 수 없습니다.
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/일시정지</code>
+                <br><ul class="circle">
+                    <li style="color: white;">현재 재생중인 곡을 일시정지합니다.</li>
+                </ul>
+            </p>
+            <p>
+                <code>/재개</code>
+                <br><ul class="circle">
+                    <li style="color: white;">일시정지된 곡을 다시 재생합니다.</li>
+                </ul>
+            </p>
+            <p>
+                <code>/정지</code>
+                <br><ul class="circle">
+                    <li style="color: white;">현재 재생중인 음악을 완전히 정지합니다.</li>
+                </ul>
+            </p>
+         </div>
+         <div style="padding: 0px 0px 100px 0px;"></div>
      </div>
  </div>
  <!-- Github Corner Ribbon - to remove (Ribbon created with : http://tholman.com/github-corners/ )-->
