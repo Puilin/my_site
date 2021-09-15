@@ -53,6 +53,9 @@
             <li class="scroll-to-link" data-target="music">
                 <a>음악 기능</a>
             </li>
+            <li class="scroll-to-link" data-target="conv">
+                <a>대화 기능</a>
+            </li>
          </ul>
      </div>
  </div>
@@ -311,25 +314,25 @@
                                 </li>
                             </ul>
                         </li>
+                        <li style="color: white;">
+                            <strong>참고</strong><br>
+                            서버 내에서 변경된 닉네임은 봇이 인식하지 못합니다. 이 경우 <code>/강화랭킹</code> 을 통해 조회되는 닉네임을 볼 수 있습니다.
+                        </li>
                     </ul>
                 </ul>
             </p>
             <p>
-                <code>/강화 (멤버명)</code>
+                <code>/강화확률 (인챈트단계)</code>
                 <br><ul class="circle">
-                    <li style="color: white;">입력된 멤버를 인챈트합니다.</li>
+                    <li style="color: white;">해당 인챈트 단계의 강화 성공확률을 조회합니다.</li>
                     <ul class="disc" style="margin-left: -20px;">
                         <li style="color: white;">
-                            변수(문자열) 하나를 필요로 하는 명령어입니다.
+                            변수(정수) 하나를 필요로 하는 명령어입니다.
                             <ul class="square" style="margin-left: -20px;">
                                 <li style="color: white;">
-                                    ex) <code>/강화 퓨이린</code>
+                                    ex) <code>/강화확률 100</code>
                                 </li>
                             </ul>
-                        </li>
-                        <li style="color: white;">
-                            <strong>참고</strong><br>
-                            서버 내에서 변경된 닉네임은 봇이 인식하지 못합니다. 이 경우 <code>/강화랭킹</code> 을 통해 조회되는 닉네임을 볼 수 있습니다.
                         </li>
                     </ul>
                 </ul>
@@ -417,6 +420,53 @@
                 <code>/정지</code>
                 <br><ul class="circle">
                     <li style="color: white;">현재 재생중인 음악을 완전히 정지합니다.</li>
+                </ul>
+            </p>
+         </div>
+         <div class="overflow-hidden content-section" id="content-get-conv">
+            <h2 id="conv">대화 기능</h2>
+            <p>
+                <code>/대화모드</code>
+                <br><ul class="circle">
+                    <li style="color: white;">대화 채널을 개설합니다. 이미 개설된 경우 추가로 개설되지 않습니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            <strong>필요권한</strong><br>
+                            채널관리 권한이 필요합니다.
+                        </li>
+                        <li style="color: white;">
+                            <strong>참고</strong><br>
+                            봇은 '대화' 채널에서만 응답이 가능합니다.
+                        </li>
+                    </ul>
+                </ul>
+            </p>
+            <p>
+                <code>/배워 (사용자의 말);(봇의 대답)</code>
+                <br><ul class="circle">
+                    <li style="color: white;">퓨이린 봇에게 할 말을 가르칠 수 있습니다.</li>
+                    <ul class="disc" style="margin-left: -20px;">
+                        <li style="color: white;">
+                            사용 예시
+                            <ul class="square" style="margin-left: -20px;">
+                                <li style="color: white;">
+                                    ex) <code>/배워 안녕;안녕하세요?</code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li style="color: white;">
+                            <strong>참고</strong><br>
+                            '대화' 채널에서만 사용가능한 명령어입니다.
+                        </li>
+                        <li style="color: white;">
+                            <strong>주의</strong><br>
+                            학습된 응답으로 인해 발생한 피해는 봇이 책임지지 않습니다.
+                        </li>
+                        <li style="color: red;">
+                            <strong>경고</strong><br>
+                            음란성, 폭력성 등 불건전한 대화 목록이 발견되는 경우 해당 서버를 제재 조치 할 수 있습니다.
+                        </li>
+                    </ul>
                 </ul>
             </p>
          </div>
